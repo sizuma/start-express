@@ -1,0 +1,29 @@
+{
+    "name": "start-express",
+    "version": "1.0.0",
+    "description": "bootstrap for nodejs with express",
+    "main": "./server/index.js",
+    "scripts": {
+        "start": "nodemon --ignore 'public/*' ./server/index.js",
+        "lint-server": "find ./server -name '*.js' | xargs ./node_modules/.bin/eslint ; exit 0",
+        "lintf-server": "find ./server -name '*.js' | xargs ./node_modules/.bin/eslint --fix ; exit 0",
+        "lint-client": "find ./public/javascript -name '*.js' | xargs ./node_modules/.bin/eslint ; exit 0",
+        "lintf-client": "find ./public/javascript -name '*.js' | xargs ./node_modules/.bin/eslint --fix; exit 0",
+        "lint": "npm run lint-server ; npm run lint-client ; exit 0",
+        "lintf": "npm run lintf-server ; npm run lintf-client ; exit 0",
+        "postinstall": "cp -n .env.sample .env | exit 0"
+    },
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "body-parser": "^1.18.3",
+        "cookie-parser": "^1.4.3",
+        "dotenv": "^5.0.1",
+        "ejs": "^2.6.1",
+        "express": "^4.16.3"
+    },
+    "devDependencies": {
+        "eslint": "^4.19.1",
+        "nodemon": "^1.17.4"
+    }
+}

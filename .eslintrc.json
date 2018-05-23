@@ -1,0 +1,27 @@
+{
+    "extends": ["eslint:recommended"],
+    "plugins": [],
+    "parserOptions": {},
+    "env": {
+        "node": true,
+        "es6": true
+    },
+    "globals": {},
+    "rules": {
+        "no-console": "warn",
+        "semi": "error",
+        "prefer-const": "error",
+        "indent": [
+            "error",
+            4
+        ]
+    },
+    "overrides": [
+        {
+            "files": ["server/index.js"],
+            "rules": {
+                "no-console": "off"
+            }
+        }
+    ]
+}
