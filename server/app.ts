@@ -1,9 +1,10 @@
-const express = require('express');
-const bodyParser = require('body-parser');
-const cookieParser = require('cookie-parser');
-const path = require('path');
+import * as express from 'express'
+import * as bodyParser from 'body-parser'
+import * as cookieParser from 'cookie-parser'
+import * as path from 'path'
 
 const app = express();
+
 app.use('/public/', express.static(path.resolve(__dirname, '..', 'public')));
 
 app.use(bodyParser.urlencoded({
@@ -20,4 +21,4 @@ const router = require('./router/index');
 
 app.use('/', router);
 
-module.exports = app;
+export = app;
